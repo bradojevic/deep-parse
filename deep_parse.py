@@ -46,7 +46,7 @@ def deep_parse_dict(content, fields, exc_class=Exception, separator='__'):
                 value = value[part]
             setattr(deep_parse, store_name, value)
         except Exception as original_exc:
-            exc = exc_class('Error parsing field %r' % field)
+            exc = exc_class('Error parsing field %s' % repr(field))
             exc.error_field = field
             exc.original_exc = original_exc
             raise exc
