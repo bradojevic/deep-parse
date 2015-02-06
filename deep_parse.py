@@ -24,7 +24,12 @@ Example
 
 class DeepParseObject(object):
     """Simple dummy object to hold content."""
-    pass
+
+    def __str__(self):
+        return 'DeepParseObject: %s' % self.__dict__
+
+    def __repr__(self):
+        return 'DeepParseObject: %r' % self.__dict__
 
 
 def deep_parse_dict(content, fields, exc_class=Exception, separator='__'):
